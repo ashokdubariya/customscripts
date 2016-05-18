@@ -1,2 +1,2 @@
-# customscripts
-This repository will use create, update and delete custom scripts.
+# My First Git Repository
+This is my first github repository created for testing purpose.
