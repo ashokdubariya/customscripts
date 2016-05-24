@@ -1,4 +1,4 @@
-# Get Database Connection Details
+# Magento - Get Database Connection Details
 This script will be use for getting database connection details.
 
 # How to run this script?

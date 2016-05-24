@@ -1,4 +1,4 @@
-# Change Order Status Manually
+# Magento - Change Order Status Manually
 This script will be use for changing order status manually.
 You need to enter your order increment id and select in which status you need to change your that order.
 
