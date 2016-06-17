@@ -1,2 +1,2 @@
-## My First Git Repository
-This is my first github repository created for testing purpose.
+## Custom scripts
+Custom scripts are programs that add interactive features to your Web site.
