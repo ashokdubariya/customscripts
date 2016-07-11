@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>Custom Accordion Page</title>
+  <style type="text/css">
+  ul, li ,ol {list-style: none;list-style-type: none;padding: 0px;margin: 0px;}
+  a {text-decoration: none;color: #000;}
+  #narrow-by-list {float: left;width: 250px;border: 1px solid #E5E5E5;padding: 15px;line-height: 22px;}
+  #narrow-by-list span.label {float: left;width: 100%;background: url("plus.png") no-repeat center right;}
+  #narrow-by-list span.label.active {background: url("minus.png") no-repeat center right;}
+  #narrow-by-list li {float: left;width: 100%;}
+  #narrow-by-list span + li {display: none;padding-left: 15px;}
+  </style>
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type="text/javascript">
+  $accordion = jQuery.noConflict();
+  $accordion(document).ready(function(){
+  	$accordion("#narrow-by-list span.label").next().slideUp(10);  		
+  	$accordion("#narrow-by-list span.label").click(function(){
+  		var element = $accordion(this).next();
+  		if ($accordion(element).is(":hidden")) {
+  			$accordion(this).addClass("active");
+  			$accordion(element).slideDown(500);
+  		} else {
+  			$accordion(this).removeClass("active");
+  			$accordion(element).slideUp(500);
+  		}
+  	});
+  });
+  </script>
+</head>
+<body>
+<ul id="narrow-by-list">
+	<span class="label">Colors</span>
+	<li>
+		<ol>
+			<li><a href="#6">Beige</a></li>
+			<li><a href="#7">Black</a></li>
+			<li><a href="#5">Blue</a></li>
+			<li><a href="#20">Gold</a></li>
+			<li><a href="#19">Gray</a></li>
+			<li><a href="#18">Green</a></li>
+			<li><a href="#15">Ivory</a></li>
+			<li><a href="#17">Multi</a></li>
+			<li><a href="#13">Orange</a></li>
+			<li><a href="#4">Pink</a></li>
+			<li><a href="#9">Rust</a></li>
+			<li><a href="#12">Yellow</a></li>
+		</ol>
+	</li>
+
+	<span class="label">Size</span>
+	<li>
+		<ol>
+			<li><a href="#84">Tiny</a></li>
+			<li><a href="#84">Small</a></li>
+			<li><a href="#85">Medium</a></li>
+			<li><a href="#85">Large</a></li>
+			<li><a href="#85">Xtra Large</a></li>
+			<li><a href="#84">Tiny</a></li>
+			<li><a href="#84">Small</a></li>
+			<li><a href="#85">Medium</a></li>
+			<li><a href="#85">Large</a></li>
+			<li><a href="#85">Xtra Large</a></li>
+		</ol>
+	</li>
+
+	<span class="label">Type</span>
+	<li>
+		<ol>
+			<li><a href="#74">Modern</a></li>
+			<li><a href="#84">Tiny</a></li>
+			<li><a href="#84">Small</a></li>
+			<li><a href="#85">Medium</a></li>
+			<li><a href="#85">Large</a></li>
+			<li><a href="#85">Xtra Large</a></li>
+		</ol>
+	</li>
+
+	<span class="label">Price</span>
+	<li>
+		<ol>
+			<li><a href="#-500"><span class="price">$0</span> - <span class="price">$250</span></a></li>
+			<li><a href="#-500"><span class="price">$250</span> - <span class="price">$500</span></a></li>
+			<li><a href="#500-1000"><span class="price">$500</span> - <span class="price">$750</span></a></li>
+			<li><a href="#500-1000"><span class="price">$500</span> - <span class="price">$1000</span></a></li>
+			<li><a href="#1000-"><span class="price">$1,000</span> and above</a></li>
+		</ol>
+	</li>
+</ul>
+</body>
+</html>
