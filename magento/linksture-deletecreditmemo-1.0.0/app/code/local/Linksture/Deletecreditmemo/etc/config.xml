@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Linksture_Deletecreditmemo>
+			<version>1.0.0</version>
+		</Linksture_Deletecreditmemo>
+	</modules>
+	<frontend>
+        <routers>
+            <deletecreditmemo>
+                <use>standard</use>
+                <args>
+                    <module>Linksture_Deletecreditmemo</module>
+                    <frontName>deletecreditmemo</frontName>
+                </args>
+            </deletecreditmemo>
+        </routers>
+    </frontend>
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <linksture_deletecreditmemo before="Mage_Adminhtml">Linksture_Deletecreditmemo_Adminhtml</linksture_deletecreditmemo>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Linksture_Deletecreditmemo>
+							<title>Deletecreditmemo Module</title>
+							<sort_order>10</sort_order>
+						</Linksture_Deletecreditmemo>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+	<global>
+		<helpers>
+			<deletecreditmemo>
+				<class>Linksture_Deletecreditmemo_Helper</class>
+			</deletecreditmemo>
+		</helpers>
+		<blocks>
+			<deletecreditmemo>
+				<class>Linksture_Deletecreditmemo_Block</class>
+			</deletecreditmemo>
+			<adminhtml>
+				<rewrite>
+					<sales_creditmemo_grid>Linksture_Deletecreditmemo_Block_Adminhtml_Sales_Creditmemo_Grid</sales_creditmemo_grid>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+	</global>
+</config> 
