@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Pure CSS Based Accordion Code</title>
+        <style type="text/css">
+        * {margin: 0px;padding: 0px;}
+        body {font-size: 16px; font-family: Arial; line-height: 20px;letter-spacing: 1px;color: #232323}
+        .mcd-accordion{margin:0 auto 30px; background-color:#FFFFFF;}
+        .mcd-accordion label.mcd-label{display:block;cursor:pointer;background: url("plus.png") left 5px top 14px no-repeat;}
+        .mcd-accordion > ul{list-style:none;margin:0;padding:0;}
+        .mcd-accordion > ul li {overflow:hidden;margin:0; border-bottom: 1px solid #E5E5E5;}
+        .mcd-accordion > ul li p { padding: 0; margin: 0 0 15px 0;}
+        .mcd-accordion > ul li label.mcd-label {padding:11px 10px 8px 28px;}        
+        .mcd-accordion [type="radio"].mcd-radio {display:none;}
+        .mcd-accordion [type="radio"].mcd-radio:checked ~ label.mcd-label { background: url("minus.png") left 5px top 14px no-repeat;}
+        .mcd-accordion [type="radio"].mcd-radio:checked ~ label.mcd-label {border-bottom:0;}
+        .mcd-accordion > ul li .mcd-content {height:0px;border-top:0; font-size: small; float: left; width: 100%; box-sizing: border-box; padding:0 10px 0 30px;-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;transition: all .3s ease-out;}
+        .mcd-accordion [type="radio"].mcd-radio:checked ~ label.mcd-label ~ .mcd-content{height:100px;overflow:auto;}
+        </style>
+    </head>
+    <body>
+        <div class="pagewidth faq-page">
+            <div id="myAccordion" class="mcd-accordion">
+                <ul>
+                    <li>
+                        <input type="radio" id="mcd-radio-1" name="mcd-radio" class="mcd-radio" />
+                        <label class="mcd-label" for="mcd-radio-1">Title 1</label>
+                        <div class="mcd-content">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="mcd-radio-2" name="mcd-radio" class="mcd-radio" />
+                        <label class="mcd-label" for="mcd-radio-2">Title 2</label>
+                        <div class="mcd-content">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="mcd-radio-3" name="mcd-radio" class="mcd-radio" />
+                        <label class="mcd-label" for="mcd-radio-3">Title 3</label>
+                        <div class="mcd-content">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="mcd-radio-4" name="mcd-radio" class="mcd-radio" />
+                        <label class="mcd-label" for="mcd-radio-4">Title 4</label>
+                        <div class="mcd-content">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" id="mcd-radio-5" name="mcd-radio" class="mcd-radio" />
+                        <label class="mcd-label" for="mcd-radio-5">Title 5</label>
+                        <div class="mcd-content">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </li>                    
+                </ul>
+            </div>    
+        </div>
+    </body>
+</html>
