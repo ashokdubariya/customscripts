@@ -1,17 +1,17 @@
-#Magento 2 Useful Commands
+##Magento 2 Useful Commands
 
-#MAINTENANCE MODE
+##MAINTENANCE MODE
 php bin/magento maintenance:enable
 php bin/magento maintenance:disable
 
-#CONTENT DEPLOY COMMAND
-php -d memory_limit=1G bin/magento setup:static-content:deploy en_GB -t Magento/azure
+##CONTENT DEPLOY COMMAND
+php -d memory_limit=1G bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>
 php bin/magento setup:static-content:deploy en_US en_GB -t Magento/backend
 php bin/magento setup:static-content:deploy en_GB -t Magento/blank
 php bin/magento setup:static-content:deploy en_GB -t Magento/luma
-php bin/magento setup:static-content:deploy en_GB -t Magento/azure
+php bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>
 
-#COMMAN COMMAND
+##COMMAN COMMAND
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento indexer:reindex
@@ -21,7 +21,7 @@ php bin/magento cache:disable
 php bin/magento cache:enable
 php bin/magento cache:status
 
-#MODE DETAILS(default,developer,production)
+##MODE DETAILS(default,developer,production)
 php bin/magento deploy:mode:show
 php bin/magento deploy:mode:set production --skip-compilation
 php bin/magento deploy:mode:set developer --skip-compilation
@@ -44,4 +44,4 @@ tar -zxvf app.tar.gz
 mysqldump -u DB_USERNAME -p DATABASE_NAME > BACKUP_FILE_NAME.sql
 
 ## CREATE DB TAR FILE
-tar -zcvf rm_magento_live_22-July-2017.tar.gz rm_magento_live_22-July-2017.sql
+tar -zcvf DATABSE_TAR_FILE_NAME.tar.gz DATABASE_NAME.sql
