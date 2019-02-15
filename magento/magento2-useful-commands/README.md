@@ -1,15 +1,15 @@
 ## Magento 2 Useful Commands
 
 ## Enable / Disable Maintenance Mode
-php bin/magento maintenance:enable
-php bin/magento maintenance:disable
+`php bin/magento maintenance:enable`
+`php bin/magento maintenance:disable`
 
 ## Static Content Deployment Commands
-php -d memory_limit=1G bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>
-php bin/magento setup:static-content:deploy en_US en_GB -t Magento/backend
-php bin/magento setup:static-content:deploy en_GB -t Magento/blank
-php bin/magento setup:static-content:deploy en_GB -t Magento/luma
-php bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>
+`php -d memory_limit=1G bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>`
+`php bin/magento setup:static-content:deploy en_US en_GB -t Magento/backend`
+`php bin/magento setup:static-content:deploy en_GB -t Magento/blank`
+`php bin/magento setup:static-content:deploy en_GB -t Magento/luma`
+`php bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>`
 
 ## Command Commands
 php bin/magento setup:upgrade
