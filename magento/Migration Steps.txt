@@ -1,0 +1,70 @@
+Please follow the below steps to Migration M1 website to M2 website.
+
+Step 1: Update "max_allowed_packet" variable value with "1073741824" using below query in phpMyAdmin
+`SET GLOBAL max_allowed_packet=1073741824;`
+
+Step 2: Setup M1 project in your localhost and disable the catalog flat data from Admin >> System >> Configuration >> Catalogue >> Catalogue >> Frontend >> Use Flat Catalog Category & Use Flat Catalog Product
+
+Step 3: Reindex M1 project in Admin >> System >> Index Management
+
+Step 4: Install and setup the fresh Magento 2 latest version in your local server.
+
+Step 5: Install the Data Migration Tool with M2 version in which you want to migrate.
+composer require magento/data-migration-tool:2.3.0
+
+Step 6: Run the setup:upgrade command
+php bin/magento setup:upgrade
+
+Step 7: Go to this directory "{YOUR_M2_PROJECT_ROOT_DIRECTORY}/vendor/magento/data-migration-tool/etc/opensource-to-opensource/{M1_VERSION}/"
+Rename file config.xml.dist to config.xml
+Rename file map.xml.dist to map.xml
+
+Step 6: Open config.xml (From this directory "{YOUR_M2_PROJECT_ROOT_DIRECTORY}/vendor/magento/data-migration-tool/etc/opensource-to-opensource/{M1_VERSION}/config.xml")
+
+Step 7:  Setup the M1 database name, username and password on line number approx 100
+//Magento 1 database access
+<source>
+    <database host="localhost" name="M1_DB_NAME" user="M1_DB_USER" password="M1_DB_PASSWORD" />
+</source>
+
+//Magento 2 database access
+<destination>
+    <database host="localhost" name="M2_DB_NAME" user="M2_DB_USER" password="M2_DB_PASSWORD" />
+</destination>
+
+Step 8: Remove .dist from map.xml.dist on this line no approx 107 "<map_file>etc/opensource-to-opensource/1.9.3.10/map.xml.dist</map_file>"
+Code after Edit that lime "<map_file>etc/opensource-to-opensource/1.9.2.4/map.xml</map_file>"
+
+Step 9: Copy crypt key from magento 1 /app/etc/local.xml and set in config.xml
+Example: 
+<options>
+    ...
+    <crypt_key>f5c82fa911418341aec329db9f798f81</crypt_key>
+    ...
+</options>
+
+Step 10: Run folllwing commands one by one.
+
+>> sudo php bin/magento migrate:settings -r /var/www/html/magento-230-migration/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.3.10/config.xml
+
+>> sudo php bin/magento migrate:data -r /var/www/html/magento-230-migration/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.3.10/config.xml
+
+>> sudo bin/magento migrate:delta -r /var/www/html/magento-230-migration/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.3.10/config.xml
+
+
+if error Foreign key Please go to /var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.2.4/config.xml
+
+comment  this code <step title="Data Integrity Step">
+            <integrity>Migration\Step\DataIntegrity\Integrity</integrity>
+        </step>
+
+        <map_file>etc/opensource-to-opensource/1.9.2.4/map.xml</map_file>
+        <eav_map_file>etc/opensource-to-opensource/map-eav.xml</eav_map_file>
+        <eav_attribute_groups_file>etc/opensource-to-opensource/eav-attribute-groups.xml</eav_attribute_groups_file>
+        <class_map>etc/opensource-to-opensource/class-map.xml</class_map>
+
+/var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.2.4/config.xml
+var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.2.4/map.xml
+/var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/map-eav.xml
+/var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/eav-attribute-groups.xml
+/var/www/html/Magento-CE-2.2.7/vendor/magento/data-migration-tool/etc/opensource-to-opensource/class-map.xml
