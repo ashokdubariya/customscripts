@@ -2,7 +2,7 @@
 This code will be use to allowed access for PHP files in the bridge2cart directory.
 
 ## You can use below code in the Nginx configuration file
-`location /bridge2cart/ {
+<pre>location /bridge2cart/ {
 	index index.php index.html index.htm;
 	try_files $uri =404;
 	expires 30d;
@@ -14,4 +14,4 @@ This code will be use to allowed access for PHP files in the bridge2cart directo
 		fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
 		include fastcgi_params;
 	}
-}`
+}</pre>
