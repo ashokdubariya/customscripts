@@ -2,6 +2,7 @@
 
 ## Enable / Disable Maintenance Mode
 `php bin/magento maintenance:enable`
+
 `php bin/magento maintenance:disable`
 
 ## Static Content Deployment Commands
@@ -15,7 +16,7 @@
 
 `php bin/magento setup:static-content:deploy en_GB -t Magento/<YOUR THEME NAME>`
 
-## Command Commands
+## Magento 2 Commands
 `php bin/magento setup:upgrade`
 
 `php bin/magento setup:di:compile`
