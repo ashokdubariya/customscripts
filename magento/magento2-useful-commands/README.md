@@ -66,6 +66,9 @@
 
 ## Execute Below Command for Apache
 `sudo php bin/magento config:set web/secure/base_static_url http://localhost/magento-versions/magento243/pub/static/`
+
 `sudo php bin/magento config:set web/unsecure/base_static_url http://localhost/magento-versions/magento243/pub/static/`
+
 `sudo php bin/magento config:set web/secure/base_media_url http://localhost/magento-versions/magento243/pub/media/`
+
 `sudo php bin/magento config:set web/unsecure/base_media_url http://localhost/magento-versions/magento243/pub/media/`
